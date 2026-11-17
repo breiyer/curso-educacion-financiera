@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Módulo 1 · Dinero, inflación y valor del dinero en el tiempo</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-base="../" data-page="module" data-id="m01">
+<main>
+<div class="wrap">
+<h1>Dinero, inflación y valor del dinero en el tiempo</h1>
+<p class="meta"><span>⏱ ≈ 35 min</span><span>Sin conocimientos previos</span></p>
+
+<div class="card"><b>Al terminar este módulo podrás:</b>
+<ul class="goals">
+<li>Explicar por qué el dinero de hoy vale más que el de mañana.</li>
+<li>Calcular cuánto poder de compra pierde tu dinero con la inflación.</li>
+<li>Diferenciar interés simple de interés compuesto y entender por qué importa.</li>
+<li>Calcular cuánto necesitas ahorrar al mes para llegar a una meta.</li>
+</ul></div>
+
+<h2>1. El dinero no es solo billetes</h2>
+<p>El dinero cumple tres funciones: sirve para <b>intercambiar</b> cosas (comprar y vender), para <b>medir el valor</b> de lo que se compra y para <b>guardar valor</b> en el tiempo. La tercera función es la que más nos importa en este curso, porque un crédito es, en el fondo, <i>comprar tiempo</i>: recibes dinero hoy y lo pagas mañana.</p>
+<p>Y comprar tiempo cuesta. Ese precio se llama <b>interés</b>.</p>
+
+<h2>2. Inflación: por qué mil pesos de hoy no son los de ayer</h2>
+<p>La <b>inflación</b> es el aumento generalizado y sostenido de los precios. En Colombia la mide el DANE con el Índice de Precios al Consumidor (IPC), y el Banco de la República usa su tasa de interés de política para acercar la inflación a una meta del 3 %.</p>
+<p>Si la inflación es del 5 % anual, algo que hoy cuesta $1.000.000 costará $1.050.000 el año entrante. Dicho de otro modo, tus $1.000.000 guardados en el colchón comprarán menos cosas.</p>
+<div class="formula">Poder de compra futuro = Monto ÷ (1 + inflación)<sup>años</sup></div>
+<div data-sim="inflacion"></div>
+<div class="callout tip"><strong>Idea clave</strong><p>Si tu dinero no gana al menos la inflación, estás perdiendo poder de compra aunque el número en tu cuenta no cambie.</p></div>
+
+<h2>3. Valor del dinero en el tiempo</h2>
+<p>Un peso hoy vale más que un peso mañana por tres razones:</p>
+<ul>
+<li><b>Oportunidad:</b> hoy puedes invertirlo o ahorrarlo y ganar intereses.</li>
+<li><b>Inflación:</b> mañana comprará menos.</li>
+<li><b>Riesgo:</b> mañana puede que quien te lo debe no pague.</li>
+</ul>
+<p>Por eso quien presta dinero cobra interés: compensa esos tres efectos. Y por eso, cuando tú pides un crédito, debes preguntarte siempre: <i>¿el beneficio de tener este dinero hoy supera lo que me costará el interés?</i></p>
+
+<h2>4. Interés simple e interés compuesto</h2>
+<p>En el <b>interés simple</b>, los intereses se calculan siempre sobre el capital inicial. En el <b>interés compuesto</b>, los intereses ya generados se suman al capital y producen nuevos intereses.</p>
+<div class="formula">Simple: Monto = Capital × (1 + tasa × años)<br>Compuesto: Monto = Capital × (1 + tasa)<sup>años</sup></div>
+<p><b>Ejemplo:</b> $1.000.000 al 12 % anual durante 20 años. Con interés simple llegas a $3.400.000. Con interés compuesto, a unos $9.646.000. La diferencia es enorme y crece con el tiempo.</p>
+<div data-sim="interes"></div>
+
+<h3>La regla del 72</h3>
+<p>Un atajo mental: divide 72 entre la tasa anual y obtienes, aproximadamente, los años que tarda en duplicarse el dinero. Al 8 %, unos 9 años. Al 24 %, 3 años: por eso las deudas caras son tan peligrosas.</p>
+
+<div class="callout warn"><strong>El arma de doble filo</strong><p>El interés compuesto trabaja a tu favor cuando ahorras o inviertes, y en tu contra cuando mantienes una deuda con intereses altos sin pagarla. El mismo mecanismo hace crecer un ahorro y una deuda de tarjeta.</p></div>
+
+<h2>5. Ahorrar para no endeudarte (o endeudarte menos)</h2>
+<p>Ahorrar de forma constante es la primera defensa de tu vida crediticia. Un ahorro para una cuota inicial reduce el monto que pides; un fondo de emergencia evita que un imprevisto te empuje hacia créditos caros.</p>
+<div data-sim="ahorro"></div>
+<div data-sim="meta"></div>
+
+<h2>6. Tres conceptos que usaremos todo el curso</h2>
+<table>
+<thead><tr><th>Término</th><th>Qué significa</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td><b>Capital</b></td><td>Dinero prestado o ahorrado, sin intereses</td><td>$5.000.000</td></tr>
+<tr><td><b>Interés</b></td><td>Precio del dinero en el tiempo</td><td>$600.000 en un año</td></tr>
+<tr><td><b>Plazo</b></td><td>Tiempo que dura la operación</td><td>12 meses</td></tr>
+</tbody></table>
+
+<h2>Resumen</h2>
+<ul>
+<li>El dinero de hoy vale más que el de mañana: por oportunidad, inflación y riesgo.</li>
+<li>La inflación reduce el poder de compra; la mide el DANE (IPC).</li>
+<li>El interés es el precio de usar dinero en el tiempo.</li>
+<li>El interés compuesto genera “intereses sobre intereses”: favorece al ahorrador y castiga al deudor.</li>
+<li>Ahorrar con constancia y tener un fondo de emergencia reduce la necesidad de endeudarte.</li>
+</ul>
+
+<h2>Fuentes de este módulo</h2>
+<ul class="sources">
+<li>Banco de la República, “Implementación de la política monetaria” (meta de inflación del 3 %): banrep.gov.co.</li>
+<li>Banco de la República, glosario de tasa de interés de intervención.</li>
+<li>OCDE/INFE, marco de competencias financieras (ver <a href="../fuentes.html">Fuentes</a>).</li>
+</ul>
+
+<div id="quiz"></div>
+</div>
+</main>
+<script src="../js/finance.js"></script>
+<script src="../js/quizzes.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/sims.js"></script>
+</body>
+</html>

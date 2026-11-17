@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Módulo 8 · Presupuesto y capacidad de endeudamiento</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-base="../" data-page="module" data-id="m08">
+<main>
+<div class="wrap">
+<h1>Presupuesto y capacidad de endeudamiento</h1>
+<p class="meta"><span>⏱ ≈ 45 min</span><span>Cuánto puedes pagar sin ahogarte</span></p>
+
+<div class="card"><b>Al terminar este módulo podrás:</b>
+<ul class="goals">
+<li>Armar un presupuesto simple.</li>
+<li>Calcular tu relación deuda/ingreso (DTI).</li>
+<li>Estimar la cuota máxima y el monto máximo que puedes pedir.</li>
+<li>Planear un fondo de emergencia.</li>
+</ul></div>
+
+<h2>1. Antes de pedir: tu presupuesto</h2>
+<p>El banco evalúa si <i>él</i> corre riesgo. Tú debes evaluar si <i>tú</i> puedes vivir con esa cuota. Un presupuesto es simplemente una foto de ingresos y gastos.</p>
+<ol>
+<li><b>Ingresos netos:</b> lo que realmente llega a tu cuenta cada mes (después de descuentos).</li>
+<li><b>Gastos esenciales:</b> vivienda, servicios, alimentación, transporte, salud, educación.</li>
+<li><b>Deudas actuales:</b> todas las cuotas que ya pagas.</li>
+<li><b>Gastos variables o de gusto:</b> salidas, ropa, suscripciones.</li>
+<li><b>Ahorro:</b> lo que reservas antes de gastar.</li>
+</ol>
+
+<h3>La regla 50/30/20 (referencia popular)</h3>
+<p>Una guía común de educación financiera: 50 % necesidades, 30 % gustos, 20 % ahorro y pago extra de deudas. No es oficial ni sirve a todos, pero es un buen punto de partida. Ajústala a tu realidad.</p>
+<div data-sim="presupuesto"></div>
+
+<h2>2. Relación deuda/ingreso (DTI)</h2>
+<div class="formula">DTI = Cuotas mensuales de deuda ÷ Ingreso mensual neto</div>
+<table>
+<thead><tr><th>DTI</th><th>Lectura general</th></tr></thead>
+<tbody>
+<tr><td>Hasta 30 %</td><td>Zona saludable</td></tr>
+<tr><td>30–40 %</td><td>Zona de cuidado: poco margen para imprevistos</td></tr>
+<tr><td>Más de 40 %</td><td>Zona de riesgo: el crédito compromete tu vida diaria</td></tr>
+</tbody></table>
+<p class="disclaimer">Son guías educativas; cada entidad define sus propios criterios de aprobación y cada hogar tiene gastos distintos. En vivienda, la Ley 546 de 1999 limita la primera cuota al 30 % de los ingresos familiares (módulo 11).</p>
+
+<h2>3. ¿Cuánto crédito puedo pedir?</h2>
+<p>De la cuota máxima que puedes pagar se despeja el monto máximo:</p>
+<div class="formula">Cuota máxima = (Ingreso × tope) − cuotas actuales<br>Monto máximo = Cuota × [1 − (1 + i)<sup>−n</sup>] ÷ i</div>
+<div data-sim="capacidad"></div>
+<div class="callout warn"><strong>Aprobación no es capacidad</strong><p>Un banco puede aprobarte más de lo que te conviene. Tu límite lo pones tú, con tu presupuesto, no el cupo que te ofrezcan.</p></div>
+
+<h2>4. El fondo de emergencia</h2>
+<p>Es un ahorro para imprevistos (pérdida de empleo, salud, reparaciones). Se suele proponer entre <b>3 y 6 meses de gastos esenciales</b>. Sin él, cualquier imprevisto se convierte en una deuda cara.</p>
+<div data-sim="emergencia"></div>
+<ul>
+<li>Guárdalo en un producto seguro y líquido (cuenta de ahorros, fondo de bajo riesgo).</li>
+<li>Úsalo solo para emergencias reales y repónlo.</li>
+<li>Mientras lo construyes, evita nuevos créditos de consumo.</li>
+</ul>
+
+<h2>5. Señales de alarma</h2>
+<ul>
+<li>Pagas una deuda con otra o con el cupo de la tarjeta.</li>
+<li>Solo alcanzas el pago mínimo.</li>
+<li>No sabes cuánto debes en total.</li>
+<li>Te da miedo revisar el extracto o contestar llamadas.</li>
+<li>Pides prestado para cubrir gastos básicos del mes.</li>
+</ul>
+<p>Si te ves en varias, pasa directo al módulo 10 (estrategias de pago) y al 13 (sobreendeudamiento).</p>
+
+<h2>6. Ejercicio</h2>
+<p>Anota hoy: (1) tus ingresos netos, (2) tus cuotas de deuda y (3) tus gastos esenciales. Calcula tu DTI y el tamaño de tu fondo de emergencia. Ese diagnóstico será la base de tu plan final en el módulo 14.</p>
+
+<h2>Resumen</h2>
+<ul>
+<li>Un presupuesto es la base de cualquier decisión de crédito.</li>
+<li>DTI = cuotas de deuda ÷ ingresos; por encima de 35–40 % se complica.</li>
+<li>De la cuota máxima se despeja el monto que puedes pedir.</li>
+<li>El fondo de emergencia evita que un imprevisto se vuelva deuda cara.</li>
+</ul>
+
+<h2>Fuentes de este módulo</h2>
+<ul class="sources">
+<li>Superintendencia Financiera: Ley 546 de 1999 (límite de 30 % de ingresos familiares en la primera cuota de vivienda).</li>
+<li>OCDE/INFE: competencias financieras (presupuesto, ahorro, planeación).</li>
+<li>CFPB (EE. UU.): guías sobre relación deuda/ingreso y presupuesto, como referencia internacional.</li>
+</ul>
+
+<div id="quiz"></div>
+</div>
+</main>
+<script src="../js/finance.js"></script>
+<script src="../js/quizzes.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/sims.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Certificado · Vida crediticia desde cero</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-base="" data-page="certificado" data-id="certificado">
+<main>
+<div class="wrap">
+  <div class="kicker no-print">Reconocimiento</div>
+  <h1 class="no-print">Certificado de finalización</h1>
+  <div id="locked" class="callout warn no-print" hidden><strong>Aún no está disponible</strong><p id="why"></p></div>
+  <div id="open" hidden>
+    <div class="field no-print" style="max-width:420px"><label for="nm">Escribe tu nombre como quieres que aparezca</label><input id="nm" type="text" maxlength="60" placeholder="Nombre y apellido"></div>
+    <div class="cert" id="cert">
+      <div>Curso interactivo</div>
+      <h1>Vida crediticia desde cero</h1>
+      <p>Se certifica que</p>
+      <div class="name" id="certName">________________</div>
+      <p>completó los 14 módulos del curso de educación financiera y aprobó el examen final con <b id="certScore"></b>.</p>
+      <p id="certDate"></p>
+      <p style="font-size:.8rem;color:#666">Certificado de uso personal, generado en el navegador, sin validez académica oficial.</p>
+    </div>
+    <p class="no-print"><button class="btn" id="print">🖨 Imprimir / guardar como PDF</button></p>
+  </div>
+</div>
+</main>
+<script src="js/finance.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var C = window.Course, p = C.load(), n = C.doneCount(p), total = C.MODULES.length;
+  var ok = n === total && p.exam && p.exam.passed;
+  if (!ok) {
+    document.getElementById('locked').hidden = false;
+    var why = [];
+    if (n < total) why.push('Te faltan ' + (total - n) + ' módulos por completar.');
+    if (!(p.exam && p.exam.passed)) why.push('Debes aprobar el examen final.');
+    document.getElementById('why').textContent = why.join(' ');
+    return;
+  }
+  document.getElementById('open').hidden = false;
+  var nm = document.getElementById('nm'); nm.value = p.name || '';
+  function paint() { document.getElementById('certName').textContent = nm.value.trim() || '________________'; }
+  nm.oninput = function () { var q = C.load(); q.name = nm.value.trim(); C.save(q); paint(); }; paint();
+  document.getElementById('certScore').textContent = Math.round(p.exam.score * 100) + ' %';
+  var d = p.exam.date ? new Date(p.exam.date + 'T12:00:00') : new Date();
+  document.getElementById('certDate').textContent = 'Fecha: ' + d.toLocaleDateString('es-CO', { day: 'numeric', month: 'long', year: 'numeric' });
+  document.getElementById('print').onclick = function () { window.print(); };
+});
+</script>
+</body>
+</html>

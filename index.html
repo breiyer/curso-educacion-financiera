@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vida crediticia desde cero · Curso interactivo de educación financiera (Colombia)</title>
+<meta name="description" content="Curso interactivo y gratuito sobre créditos, tasas, cuotas, tarjetas, historial crediticio y derechos del consumidor financiero en Colombia. De cero a avanzado.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-base="" data-page="index" data-id="index">
+<main>
+<div class="wrap">
+  <div class="hero">
+    <div class="kicker">Curso interactivo · Colombia · Pesos (COP)</div>
+    <h1>Vida crediticia desde cero</h1>
+    <p class="lead">Aprende qué es un crédito, cómo se calculan las tasas y las cuotas, cómo se construye (y se arruina) un historial crediticio y cómo defender tus derechos. Sin saber nada de finanzas.</p>
+    <p><a class="btn" id="startBtn" href="modulos/m01.html" style="text-decoration:none;display:inline-block">▶ Empezar el curso</a>
+       <button class="btn" id="resetBtn" style="background:var(--line);color:var(--ink)">Reiniciar mi progreso</button></p>
+    <p class="meta"><span>14 módulos</span><span>≈ 11 horas</span><span>20+ simuladores y calculadoras</span><span>Quizzes, examen final y certificado</span></p>
+  </div>
+
+  <div class="callout tip"><strong>¿Cómo funciona?</strong>
+    <p>Cada módulo explica un tema con ejemplos en pesos, tiene simuladores para que juegues con las cifras y un cuestionario. Con 70 % o más completas el módulo. Cuando termines los 14 y apruebes el examen final, puedes descargar tu certificado. Tu avance se guarda en este navegador; no se envía a ningún servidor.</p></div>
+
+  <div class="card">
+    <h3 style="margin-top:0">Tu progreso</h3>
+    <div class="bar" aria-hidden="true"><i id="bigBar" style="background:var(--brand);width:0"></i></div>
+    <p id="progText" class="meta" style="margin-top:8px"></p>
+  </div>
+
+  <div id="moduleList"></div>
+
+  <div class="callout warn"><strong>Aviso importante</strong>
+    <p>Este curso es educativo. No reemplaza asesoría financiera, legal o tributaria personalizada. Las tasas y las leyes cambian: cada dato lleva su fecha y su fuente en la página de <a href="fuentes.html">Fuentes</a>. Verifica siempre en la entidad oficial antes de decidir.</p></div>
+</div>
+</main>
+<script src="js/finance.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var C = window.Course, p = C.load(), h = '', last = 0;
+  C.MODULES.forEach(function (m) {
+    if (m.level !== last) { h += (last ? '</div>' : '') + '<h2>' + C.LEVELS[m.level] + '</h2><div>'; last = m.level; }
+    var d = p.mods[m.id] && p.mods[m.id].done;
+    h += '<a class="mod ' + (d ? 'done' : '') + '" href="modulos/' + m.id + '.html"><div class="n">' + (d ? '✔' : m.n) + '</div><div><b>' + m.title + '</b><small>' + m.sum + '</small><small>⏱ ≈ ' + m.min + ' min</small></div></a>';
+  });
+  document.getElementById('moduleList').innerHTML = h + '</div>';
+  var n = C.doneCount(p), pct = Math.round(n / C.MODULES.length * 100);
+  document.getElementById('bigBar').style.width = pct + '%';
+  document.getElementById('progText').textContent = n + ' de ' + C.MODULES.length + ' módulos completados (' + pct + ' %)' + (p.exam && p.exam.passed ? ' · Examen final aprobado ✔' : '');
+  var next = C.MODULES.find(function (m) { return !(p.mods[m.id] && p.mods[m.id].done); });
+  var sb = document.getElementById('startBtn');
+  if (n > 0 && next) { sb.textContent = '▶ Continuar: Módulo ' + next.n; sb.href = 'modulos/' + next.id + '.html'; }
+  else if (!next) { sb.textContent = '📝 Ir al examen final'; sb.href = 'examen.html'; }
+  document.getElementById('resetBtn').onclick = function () {
+    if (confirm('Se borrará tu progreso, tu plan personal y tu certificado en este navegador. ¿Continuar?')) { localStorage.removeItem('cc_progress_v1'); location.reload(); }
+  };
+});
+</script>
+</body>
+</html>

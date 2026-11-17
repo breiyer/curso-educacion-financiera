@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Módulo 3 · Tasas de interés</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-base="../" data-page="module" data-id="m03">
+<main>
+<div class="wrap">
+<h1>Tasas de interés: E.A., nominal, vencida, anticipada y usura</h1>
+<p class="meta"><span>⏱ ≈ 50 min</span><span>El módulo más importante para comparar créditos</span></p>
+
+<div class="card"><b>Al terminar este módulo podrás:</b>
+<ul class="goals">
+<li>Leer una tasa y saber si es efectiva, nominal, vencida o anticipada.</li>
+<li>Convertir cualquier tasa a efectiva anual (E.A.) para compararla.</li>
+<li>Saber qué es la usura, el interés bancario corriente y las tasas de referencia.</li>
+<li>Reconocer si te están ofreciendo una tasa ilegal.</li>
+</ul></div>
+
+<h2>1. ¿Por qué hay tantos “tipos” de tasa?</h2>
+<p>Una tasa es el precio del dinero, expresado como porcentaje. El problema es que se puede decir de muchas formas: “2 % mensual”, “24 % anual”, “26,8 % E.A.”, “2 % anticipado”. <b>Las cuatro pueden ser la misma tasa</b> o, peor, parecer iguales y ser distintas. Aprender a convertirlas es lo que evita que te engañen (o te confundas).</p>
+
+<h2>2. Tres preguntas para leer cualquier tasa</h2>
+<ol>
+<li><b>¿Para qué período es?</b> Mensual, trimestral, anual.</li>
+<li><b>¿Es efectiva o nominal?</b> La efectiva ya incluye el efecto de capitalizar; la nominal es una tasa “de papel” que se divide entre períodos.</li>
+<li><b>¿Es vencida o anticipada?</b> ¿Los intereses se cobran al final o al principio del período?</li>
+</ol>
+
+<h2>3. Tasa efectiva anual (E.A.)</h2>
+<p>Es lo que realmente crecería (o crece) tu dinero en un año si los intereses se capitalizan. Es la tasa universal para <b>comparar</b>. En Colombia, las entidades expresan las tasas de los créditos como E.A. y la Superfinanciera certifica la usura en E.A.</p>
+
+<h2>4. Tasa nominal</h2>
+<p>La tasa nominal se expresa como anual, pero se aplica por períodos más cortos. Por ejemplo “24 % N.M.V.” (nominal mes vencido) significa que cada mes se cobra 24 % ÷ 12 = 2 %. Pero al componer 12 meses el efecto es mayor:</p>
+<div class="formula">E.A. = (1 + nominal ÷ m)<sup>m</sup> − 1, con m = períodos por año<br>24 % N.M.V. → (1 + 0,24/12)¹² − 1 = <b>26,82 % E.A.</b></div>
+<div class="callout warn"><strong>El error más común</strong><p>Multiplicar “2 % mensual × 12 = 24 %” y creer que el costo anual es 24 %. El costo real es 26,82 %. La diferencia es la capitalización.</p></div>
+
+<h2>5. Tasa vencida vs. anticipada</h2>
+<p><b>Vencida:</b> los intereses se pagan al final del período. Es la forma habitual en créditos de consumo y vivienda.</p>
+<p><b>Anticipada:</b> los intereses se cobran al inicio. Si te prestan $1.000.000 con 2 % mensual anticipado, te descuentan $20.000 de entrada y recibes $980.000, pero pagas intereses como si tuvieras $1.000.000.</p>
+<div class="formula">Anticipada → vencida: i = d ÷ (1 − d)<br>Vencida → anticipada: d = i ÷ (1 + i)<br>Ejemplo: 2 % mensual anticipada = 2,04 % mensual vencida ≈ 27,4 % E.A.</div>
+
+<h2>6. Convertidor interactivo</h2>
+<p>Prueba con una tasa que conozcas. Por ejemplo, 20 % E.A. equivale a 1,53 % mensual vencida y 18,37 % N.M.V.</p>
+<div data-sim="conversion"></div>
+<details><summary>Fórmulas de conversión (para quien quiera ver la matemática)</summary>
+<ul>
+<li>E.A. → mensual vencida: i = (1 + E.A.)<sup>1/12</sup> − 1</li>
+<li>Mensual vencida → E.A.: (1 + i)<sup>12</sup> − 1</li>
+<li>Nominal anual (m períodos) → E.A.: (1 + j/m)<sup>m</sup> − 1</li>
+<li>E.A. → nominal: j = m × [(1 + E.A.)<sup>1/m</sup> − 1]</li>
+</ul></details>
+
+<h2>7. La tasa de usura</h2>
+<p>La <b>usura</b> es el límite máximo legal de interés. Cobrar por encima no es permitido. En Colombia, la Superintendencia Financiera certifica cada mes el <b>interés bancario corriente (IBC)</b> por modalidad de crédito, y la usura equivale a <b>1,5 veces</b> ese IBC.</p>
+<table>
+<thead><tr><th>Dato (noviembre de 2026)</th><th class="num">Tasa E.A.</th></tr></thead>
+<tbody>
+<tr><td>Interés bancario corriente, crédito de consumo y ordinario</td><td class="num">18,89 %</td></tr>
+<tr><td>Tasa de usura, consumo y ordinario (= IBC × 1,5)</td><td class="num">28,34 %</td></tr>
+</tbody></table>
+<p class="disclaimer">Vigencia: 1 al 30 de noviembre de 2026, según la certificación de la Superfinanciera. Estas cifras cambian cada mes; consulta la vigente en <a href="https://www.superfinanciera.gov.co" target="_blank" rel="noopener">superfinanciera.gov.co</a>.</p>
+<div data-sim="usura"></div>
+<div class="callout law"><strong>La tasa de mora también tiene tope</strong><p>Si te atrasas, la entidad puede cobrar intereses de mora, pero no por encima de la usura.</p></div>
+
+<h2>8. Tasas de referencia: TPM, IBR y DTF</h2>
+<p>Muchos créditos (sobre todo de empresas, vivienda y en tasa variable) se pactan como “IBR + 5 puntos” o similar. Estas son las referencias:</p>
+<table>
+<thead><tr><th>Tasa</th><th>¿Qué es?</th></tr></thead>
+<tbody>
+<tr><td><b>Tasa de intervención (TPM)</b></td><td>La tasa de política monetaria del Banco de la República. Es su principal herramienta para llevar la inflación a la meta (3 %). En noviembre de 2026 estaba en <b>12,25 %</b> (vigente desde el 1 de octubre de 2026).</td></tr>
+<tr><td><b>IBR</b></td><td>Indicador Bancario de Referencia: tasa de corto plazo del mercado interbancario, publicada por el Banco de la República.</td></tr>
+<tr><td><b>DTF</b></td><td>Tasa basada en los CDT de los establecimientos de crédito. Según los anuncios del sector, será reemplazada por el IBR como referencia desde el 1 de enero de 2027.</td></tr>
+</tbody></table>
+
+<h3>Tasa fija o variable</h3>
+<ul>
+<li><b>Fija:</b> la tasa se mantiene durante el crédito (o por un período pactado). Sabes exactamente cuánto pagas.</li>
+<li><b>Variable:</b> cambia con una referencia (IBR, UVR/IPC). Si la referencia sube, tu cuota puede subir.</li>
+</ul>
+
+<h2>9. Ejercicio mental</h2>
+<p>Tres ofertas para $10.000.000 a 12 meses:</p>
+<ul>
+<li>A: 1,6 % mensual vencida.</li>
+<li>B: 20 % E.A.</li>
+<li>C: 1,6 % mensual anticipada.</li>
+</ul>
+<p>Conviértelas a E.A. con el simulador: A ≈ 21,0 %, B = 20,0 %, C ≈ 21,4 %. La más barata es B, aunque “1,6 %” suene a una tasa pequeña. <b>Siempre convierte a E.A.</b></p>
+
+<h2>Resumen</h2>
+<ul>
+<li>Convierte todas las tasas a E.A. para comparar.</li>
+<li>La nominal no es lo que pagas: la capitalización la eleva.</li>
+<li>La anticipada cobra el interés por adelantado, así que es más cara que la vencida del mismo número.</li>
+<li>Usura = 1,5 × interés bancario corriente; cobrar más es ilegal. Para noviembre de 2026: 28,34 % E.A. en consumo.</li>
+<li>TPM, IBR y DTF son referencias; el IBR reemplaza a la DTF desde 2027, según los anuncios.</li>
+</ul>
+
+<h2>Fuentes de este módulo</h2>
+<ul class="sources">
+<li>Superintendencia Financiera de Colombia, certificación del interés bancario corriente (noviembre de 2026) y simulador de conversión de tasas.</li>
+<li>Banco de la República: glosario de tasa de interés de intervención, IBR; sitio de política monetaria (tasa 12,25 %).</li>
+<li>La República, “Lo que se viene para los CDT y créditos con el fin de la tasa DTF desde 2027”.</li>
+</ul>
+
+<div id="quiz"></div>
+</div>
+</main>
+<script src="../js/finance.js"></script>
+<script src="../js/quizzes.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/sims.js"></script>
+</body>
+</html>

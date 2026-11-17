@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Examen final · Vida crediticia desde cero</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-base="" data-page="examen" data-id="examen">
+<main>
+<div class="wrap">
+  <div class="kicker">Evaluación</div>
+  <h1>Examen final</h1>
+  <p>24 preguntas de casos prácticos y conceptos integradores. Necesitas <b>75 %</b> o más para aprobar. Puedes intentarlo las veces que quieras: las preguntas se mezclan cada vez.</p>
+  <div class="callout tip"><strong>Recomendación</strong><p>Ten a la mano los simuladores. Puedes usar calculadora.</p></div>
+  <p id="state" class="meta"></p>
+  <div class="quiz"><div id="examBody"></div></div>
+</div>
+</main>
+<script src="js/finance.js"></script>
+<script src="js/quizzes.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var C = window.Course, p = C.load();
+  var st = document.getElementById('state');
+  if (p.exam) st.textContent = 'Mejor resultado: ' + Math.round(p.exam.score * 100) + ' % ' + (p.exam.passed ? '· ✔ Aprobado' : '· aún no aprobado');
+  C.renderQuiz(document.getElementById('examBody'), window.EXAM, {
+    pass: 0.75,
+    onDone: function (score, pass) {
+      var q = C.load(), prev = q.exam || {};
+      q.exam = { score: Math.max(prev.score || 0, score), passed: !!(prev.passed || pass), date: (pass && !prev.passed) ? new Date().toISOString().slice(0, 10) : prev.date };
+      C.save(q);
+      st.innerHTML = 'Mejor resultado: ' + Math.round(q.exam.score * 100) + ' % ' + (q.exam.passed ? '· ✔ Aprobado. <a href="certificado.html">Ver mi certificado</a>' : '');
+    }
+  });
+});
+</script>
+</body>
+</html>

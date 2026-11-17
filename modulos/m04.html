@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Módulo 4 · Cuotas y sistemas de amortización</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-base="../" data-page="module" data-id="m04">
+<main>
+<div class="wrap">
+<h1>Cuotas y sistemas de amortización</h1>
+<p class="meta"><span>⏱ ≈ 55 min</span><span>Con simuladores y tablas</span></p>
+
+<div class="card"><b>Al terminar este módulo podrás:</b>
+<ul class="goals">
+<li>Explicar de qué se compone una cuota.</li>
+<li>Diferenciar cuota fija, abono constante a capital, intereses con capital al final y cuota creciente.</li>
+<li>Leer una tabla de amortización.</li>
+<li>Entender cómo funciona un crédito en UVR y qué pasa con los abonos extra.</li>
+</ul></div>
+
+<h2>1. ¿De qué está hecha una cuota?</h2>
+<div class="formula">Cuota = Intereses del mes + Abono a capital (+ seguros y cargos)</div>
+<p>Los <b>intereses</b> se calculan sobre el <b>saldo</b> que debes ese mes: saldo × tasa mensual. Lo que sobra de la cuota baja la deuda. Mientras más capital abonas, menor es el saldo y menos intereses pagas el mes siguiente.</p>
+<p><b>Ejemplo:</b> debes $10.000.000 a 1,53 % mensual (20 % E.A.). Intereses del primer mes: $153.095. Si tu cuota es de $918.568, abonas a capital $765.473 y tu saldo baja a $9.234.527.</p>
+
+<h2>2. Los sistemas de amortización</h2>
+<p>La amortización es el plan con el que pagas el crédito. Hay varios; en Colombia verás sobre todo los dos primeros.</p>
+
+<h3>2.1 Cuota fija (sistema francés)</h3>
+<p>Pagas <b>la misma cuota</b> todos los meses. Al comienzo la mayor parte son intereses; con el tiempo la proporción se invierte. Es el más común en consumo, vehículo y vivienda en pesos.</p>
+<div class="formula">Cuota = Capital × i ÷ [1 − (1 + i)<sup>−n</sup>]<br>i = tasa mensual, n = número de cuotas</div>
+<p><b>Ventaja:</b> presupuesto predecible. <b>Desventaja:</b> amortizas capital lentamente al principio.</p>
+
+<h3>2.2 Abono constante a capital (sistema alemán)</h3>
+<p>Abonas <b>el mismo capital</b> cada mes (capital ÷ plazo) más los intereses del saldo. La cuota total <b>empieza alta y baja</b> cada mes. Paga menos intereses totales que la cuota fija, pero exige más flujo de caja al principio.</p>
+
+<h3>2.3 Intereses mensuales y capital al final (“bullet”)</h3>
+<p>Solo pagas intereses cada mes y devuelves todo el capital en la última cuota. La cuota mensual es baja, pero no reduces la deuda y necesitas tener todo el dinero al final. Se ve más en crédito empresarial.</p>
+
+<h3>2.4 Cuota creciente (gradiente)</h3>
+<p>La cuota empieza baja y sube de forma periódica (por ejemplo, 0,5 % cada mes), pensada para personas con ingresos que van a crecer. Al inicio puede ser incluso menor que los intereses, y en ese caso el saldo sube (amortización negativa): revisa bien esas condiciones.</p>
+
+<h2>3. Mismo crédito, distinto sistema</h2>
+<p>Con $10.000.000, 20 % E.A. y 12 meses:</p>
+<table>
+<thead><tr><th>Sistema</th><th class="num">1ª cuota</th><th class="num">Última cuota</th><th class="num">Intereses totales</th></tr></thead>
+<tbody>
+<tr><td>Cuota fija</td><td class="num">$918.568</td><td class="num">$918.568</td><td class="num">$1.022.819</td></tr>
+<tr><td>Abono constante a capital</td><td class="num">$986.428</td><td class="num">$846.091</td><td class="num">$995.116</td></tr>
+</tbody></table>
+<p>Prueba los cuatro con tus propios números:</p>
+<div data-sim="comparar"></div>
+
+<h2>4. La tabla de amortización</h2>
+<p>Es el documento que muestra, cuota a cuota, cuánto pagas de intereses, cuánto de capital y cuál es tu saldo. <b>Tienes derecho a pedirla.</b> Léela así:</p>
+<ol>
+<li>La columna <b>saldo</b> debe terminar en cero.</li>
+<li>La suma de la columna <b>capital</b> debe ser el monto del crédito.</li>
+<li>La suma de <b>intereses</b> es lo que te cuesta el dinero.</li>
+<li>Si hay seguros o cargos, deben aparecer separados.</li>
+</ol>
+<div data-sim="amortizacion"></div>
+
+<h2>5. Abonos extra y cuotas extraordinarias</h2>
+<ul>
+<li><b>Abono extra a capital:</b> reduce el saldo y, con él, los intereses futuros. Pruébalo en el simulador de arriba: pon un abono extra mensual en “cuota fija” y mira cómo se acorta el plazo. En el módulo 10 ves cuándo conviene reducir plazo o cuota.</li>
+<li><b>Cuotas extraordinarias:</b> pagos mayores en meses específicos (por ejemplo, junio y diciembre, cuando llegan primas). Reducen el plazo y los intereses; pero asegúrate de poder cumplirlas.</li>
+<li><b>Período de gracia:</b> meses en que solo pagas intereses (o nada, según el caso). Ojo: los intereses siguen corriendo.</li>
+</ul>
+
+<h2>6. UVR: el crédito que “sigue” la inflación</h2>
+<p>La <b>UVR</b> (Unidad de Valor Real) es una unidad de cuenta cuyo valor en pesos cambia a diario según la inflación (IPC); la calcula el Banco de la República. En un crédito en UVR, tu deuda se expresa en UVR: la <b>cuota en pesos sube</b> cuando sube el valor de la UVR. Se usa sobre todo en vivienda (módulo 11).</p>
+<div class="callout warn"><strong>Idea clave</strong><p>En UVR la tasa pactada es “real” (más baja), pero la inflación se suma al saldo. Eres tú quien asume el riesgo de inflación alta.</p></div>
+
+<h2>7. Cuota baja no es sinónimo de crédito barato</h2>
+<p>Las cuotas bajas se logran de tres formas: plazo largo, capital al final o cuota creciente. En todas pagas <b>más intereses en total</b>. Antes de aceptar una cuota “cómoda” mira el <b>total pagado</b>.</p>
+
+<h2>Resumen</h2>
+<ul>
+<li>Cuota = intereses + capital (+ seguros y cargos).</li>
+<li>Cuota fija: predecible, más intereses que el abono constante a capital.</li>
+<li>Abono constante: cuota inicial alta, menos intereses totales.</li>
+<li>Capital al final y cuota creciente bajan la cuota inicial pero encarecen o aplazan el riesgo.</li>
+<li>La tabla de amortización te permite verificar todo; pídela siempre.</li>
+</ul>
+
+<h2>Fuentes de este módulo</h2>
+<ul class="sources">
+<li>Superintendencia Financiera de Colombia, conceptos sobre sistemas de amortización y Ley 546 de 1999.</li>
+<li>Banco de la República, definición de UVR.</li>
+<li>Fórmulas estándar de matemática financiera (anualidades): ver también las pruebas del repositorio.</li>
+</ul>
+
+<div id="quiz"></div>
+</div>
+</main>
+<script src="../js/finance.js"></script>
+<script src="../js/quizzes.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/sims.js"></script>
+</body>
+</html>
